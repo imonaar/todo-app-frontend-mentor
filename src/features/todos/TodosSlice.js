@@ -14,7 +14,7 @@ const initialState = [
   {
     id: 3,
     text: "Learn redux",
-    isComplete: false,
+    isComplete: true,
   },
 ];
 

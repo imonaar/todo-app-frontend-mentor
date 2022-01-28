@@ -10,7 +10,12 @@ export default function Todos() {
     <div>
       <AddTodo dispatch={dispatch} />
       {todos.map((todo) => {
-        return <p key={todo.id}> {todo.text} </p>;
+        return (
+          <div key={todo.id}>
+            <input type="checkbox" />
+            <p> {todo.text} </p>
+          </div>
+        );
       })}
     </div>
   );
