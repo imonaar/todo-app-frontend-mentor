@@ -1,10 +1,9 @@
-
-export default function TodosFilter() {
+export default function TodosFilter({ setFilter }) {
   return (
     <div>
-      <button>Show all</button>
-      <button>Show active</button>
-      <button>Show Completed</button>
+      <button onClick={() => setFilter("ALL")}>Show all</button>
+      <button onClick={() => setFilter("ACTIVE")}>Show active</button>
+      <button onClick={() => setFilter("COMPLETE")}>Show Completed</button>
     </div>
   );
 }

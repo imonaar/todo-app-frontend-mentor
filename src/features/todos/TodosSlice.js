@@ -1,37 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-const initialState = [
-  {
-    id: 1,
-    text: "go to the Market",
-    isComplete: false,
-  },
-  {
-    id: 2,
-    text: "Learn React",
-    isComplete: false,
-  },
-  {
-    id: 3,
-    text: "Learn redux",
-    isComplete: true,
-  },
-];
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 const todoSlice = createSlice({
   name: "todos",
-  initialState,
+  initialState: [],
   reducers: {
     addTodo: (state, action) => {
       return [...state, action.payload];
     },
 
     removeTodo: (state, action) => {
-      return state.filter((todo) => todo.id !== action.payload.id);
+      return state.filter((todo) => todo.id !== action.payload);
     },
   },
 });
 
 export const selectTodos = (state) => state.todos;
+export const completeTodos = createSelector([selectTodos], (todos) =>
+  todos.filter((todo) => todo.isComplete)
+);
+export const incompleteTodos = createSelector([selectTodos], (todos) =>
+  todos.filter((todo) => !todo.isComplete)
+);
 export const { addTodo, removeTodo } = todoSlice.actions;
 export default todoSlice.reducer;
+
+//https://www.digitalocean.com/community/tutorials/redux-reselect
