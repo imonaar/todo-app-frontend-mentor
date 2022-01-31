@@ -2,8 +2,9 @@ import { selectTodos, completeTodos, incompleteTodos } from "./TodosSlice";
 import { useDispatch, useSelector } from "react-redux";
 import AddTodo from "../../components/AddTodo/AddTodo";
 import { useState } from "react";
-import TodosFilter from "./todoFilter";
+import TodosFilter from "../filters/todoFilter";
 import { removeTodo } from "./TodosSlice";
+import TodoListItem from "./TodoListItem";
 
 export default function Todos() {
   const todos = useSelector(selectTodos);
@@ -18,21 +19,9 @@ export default function Todos() {
       <AddTodo dispatch={dispatch} />
       {filter === "ALL" &&
         todos.map((todo) => {
-          return (
-            <div key={todo.id}>
-              <input type="checkbox" />
-              <p> {todo.text} </p>
-              <button
-                onClick={() => {
-                  dispatch(removeTodo(todo.id));
-                }}
-              >
-                delete
-              </button>
-            </div>
-          );
+          return <TodoListItem key={todo.id} todo={todo} />;
         })}
-      {filter === "ACTIVE" &&
+      {/* {filter === "ACTIVE" &&
         active.map((todo) => {
           return (
             <div key={todo.id}>
@@ -47,8 +36,8 @@ export default function Todos() {
               </button>
             </div>
           );
-        })}
-      {filter === "COMPLETE" &&
+        })} */}
+      {/* {filter === "COMPLETE" &&
         complete.map((todo) => {
           return (
             <div key={todo.id}>
@@ -63,7 +52,7 @@ export default function Todos() {
               </button>
             </div>
           );
-        })}
+        })} */}
       <TodosFilter setFilter={setFilter} />
     </div>
   );

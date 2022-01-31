@@ -1,28 +1,34 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { addTodo } from "../../features/todos/TodosSlice";
 
 export default function AddTodo({ dispatch }) {
-  const [todo, setTodo] = useState("");
-  const inputRef = useRef(null);
+  const [text, setText] = useState("");
+
   const handleChange = (e) => {
-    setTodo(e.target.value);
+    setText(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTodo = {
       id: uuidv4(),
-      text: todo,
+      text,
       isComplete: false,
     };
     dispatch(addTodo(newTodo));
-    inputRef.current.value = "";
+    setText('')
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" onChange={handleChange} ref={inputRef} />
+      <input
+        type="text"
+        onChange={handleChange}
+        placeholder="Add a Todo"
+        value={text}
+        autoFocus={true}
+      />
     </form>
   );
 }
