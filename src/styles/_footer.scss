@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+  padding-block-start: 1.5rem;
+
+  p {
+    font-size: 0.875rem;
+    color: #9495a5;
+  }
+}
+
+.actions {
+  ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  button {
+    font-weight: 700;
+  }
+}

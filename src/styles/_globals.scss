@@ -39,6 +39,15 @@ button{
   padding:0;
   background: transparent;
   border: 0;
+  cursor: pointer;
+  font-size: .875rem;
+  font-family: inherit;
+}
+
+ul, li{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 p{

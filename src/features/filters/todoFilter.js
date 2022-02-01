@@ -6,9 +6,9 @@ import { filterChanged } from "./filterSlice";
 const RemainingTodos = ({ count }) => {
   const suffix = count === 1 ? "" : "s";
   return (
-    <div>
+    <p>
       {count} item{suffix} left
-    </div>
+    </p>
   );
 };
 
@@ -28,7 +28,7 @@ const StatusFilter = ({ value: status, onChange }) => {
   });
 
   return (
-    <div>
+    <div className="actions">
       <ul> {renderedFilters} </ul>
     </div>
   );
@@ -52,6 +52,7 @@ export default function TodosFilter({ setFilter }) {
     <footer className="footer">
       <RemainingTodos count={todosRemaining} />
       <StatusFilter value={status} onChange={onStatusChange} />
+
       <button onClick={() => dispatch(clearCompleted())}>
         clear completed
       </button>
