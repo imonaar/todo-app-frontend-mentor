@@ -5,6 +5,8 @@
 }
 
 :root {
+  --border-color: #E3E4F1;
+  --gradient: linear-gradient( hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 html {
@@ -30,6 +32,17 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+button{
+  margin: 0;
+  padding:0;
+  background: transparent;
+  border: 0;
+}
+
+p{
+  margin: 0;
 }
 
 .container {

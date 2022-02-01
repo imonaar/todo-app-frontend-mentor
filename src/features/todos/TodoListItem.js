@@ -1,5 +1,6 @@
 import { removeTodo, toggleTodo } from "./TodosSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { ReactComponent as Cancel } from "./icon-cross.svg";
 
 const selectTodoById = (state, todoId) => {
   return state.todos.find((todo) => todo.id === todoId);
@@ -13,7 +14,7 @@ export default function TodoListItem({ id }) {
   function handleCompleteChanged(e) {
     dispatch(toggleTodo(id));
   }
-  
+
   return (
     <div className="todo-list-item">
       <input
@@ -22,9 +23,14 @@ export default function TodoListItem({ id }) {
         onChange={handleCompleteChanged}
         checked={completed}
       />
-      <div className="todo-text"> {text} </div>
+      <p
+        className="todo-text"
+        style={{ textDecoration: completed ? "line-through" : "" }}
+      >
+        {text}
+      </p>
       <button className="destroy" onClick={() => dispatch(removeTodo(id))}>
-        delete
+        <Cancel />
       </button>
     </div>
   );

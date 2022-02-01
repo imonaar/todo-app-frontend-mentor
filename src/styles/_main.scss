@@ -1,3 +1,95 @@
-.main{
-    
+.main {
+  padding-block: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+}
+
+.todo {
+}
+
+.todo-list {
+}
+
+.todo-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-block: 1.25rem;
+  padding-inline: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+
+  .toggle {
+    margin: 0;
+    padding: 0;
+
+    appearance: none;
+    block-size: 1.5rem;
+    inline-size: 1.5rem;
+    border-radius: 100%;
+    border: 1px solid var(--border-color);
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      inline-size: 100%;
+      block-size: 100%;
+      border-radius: 100%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      inline-size: 100%;
+      block-size: 100%;
+      border-radius: 100%;
+    }
+
+    &:checked {
+      &::before {
+        background: var(--gradient);
+      }
+
+      &::after {
+        background: url("../../public/images/icon-check.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 0.75rem;
+      }
+    }
+  }
+
+  p {
+    margin-right: auto;
+    line-height: 18px;
+    letter-spacing: -0.25px;
+    font-weight: 400;
+    margin-bottom: -0.25rem;
+  }
+
+  .destroy {
+    inline-size: 18px;
+    block-size: 18px;
+
+    display: grid;
+    place-content: center;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    visibility: hidden;
+  }
+
+  &:hover {
+    .destroy {
+      visibility: visible;
+    }
+  }
 }

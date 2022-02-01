@@ -9,7 +9,7 @@ function App() {
       <Header />
       <main className="main">
         <TodoList />
-        <TodosFilter />
+        {/* <TodosFilter /> */}
       </main>
     </div>
   );
