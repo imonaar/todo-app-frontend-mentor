@@ -7,9 +7,9 @@ export default function TodoList() {
   const todoIds = useSelector(selectFilteredTodoIds);
 
   return (
-    <section aria-label="todo list">
+    <section aria-label="todo list" className="todo-container">
       <AddTodo />
-      <div>
+      <div className="todo-list">
         {todoIds.map((todoId) => {
           return <TodoListItem key={todoId} id={todoId} />;
         })}

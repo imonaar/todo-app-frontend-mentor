@@ -49,13 +49,9 @@ export default function TodosFilter({ setFilter }) {
   };
 
   return (
-    <footer>
+    <footer className="footer">
       <RemainingTodos count={todosRemaining} />
       <StatusFilter value={status} onChange={onStatusChange} />
-
-      {/* <button onClick={() => setFilter("ALL")}>Show all</button>
-      <button onClick={() => setFilter("ACTIVE")}>Show active</button>
-      <button onClick={() => setFilter("COMPLETE")}>Show Completed</button> */}
       <button onClick={() => dispatch(clearCompleted())}>
         clear completed
       </button>

@@ -1,7 +1,9 @@
-export default function Header(){
-    return (
-      <header>
+export default function Header() {
+  return (
+    <nav>
+      <section>
         <h1>Todo App</h1>
-      </header>
-    ); 
+      </section>
+    </nav>
+  );
 }

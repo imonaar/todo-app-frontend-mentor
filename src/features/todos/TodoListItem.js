@@ -15,7 +15,7 @@ export default function TodoListItem({ id }) {
   }
   
   return (
-    <div className="view">
+    <div className="todo-list-item">
       <input
         type="checkbox"
         className="toggle"

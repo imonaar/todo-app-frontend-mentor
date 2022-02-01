@@ -5,9 +5,9 @@ import Header from "../components/header";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
-      <main>
+      <main className="main">
         <TodoList />
         <TodosFilter />
       </main>

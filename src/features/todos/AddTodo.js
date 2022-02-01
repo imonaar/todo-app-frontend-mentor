@@ -23,7 +23,7 @@ export default function AddTodo() {
   };
 
   return (
-    <div>
+    <div className="todo-input">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
