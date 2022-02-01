@@ -7,9 +7,10 @@ function App() {
   return (
     <div>
       <Header />
-      <AddTodo />
-      <TodoList />
-      <TodosFilter />
+      <main>
+        <TodoList />
+        <TodosFilter />
+      </main>
     </div>
   );
 }
