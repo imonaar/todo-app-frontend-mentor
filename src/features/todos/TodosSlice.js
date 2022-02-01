@@ -1,4 +1,5 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit";
+import { StatusFilters } from "../filters/filterSlice";
 
 const todoSlice = createSlice({
   name: "todos",
@@ -24,20 +25,37 @@ const todoSlice = createSlice({
       });
     },
     clearCompleted: (state, action) => {
-      return state.filter(todo => !todo.isComplete)
-    }
+      return state.filter((todo) => !todo.isComplete);
+    },
   },
 });
 
-export const selectTodos = (state) => state.todos;
-export const completeTodos = createSelector([selectTodos], (todos) =>
-  todos.filter((todo) => todo.isComplete)
-);
-export const incompleteTodos = createSelector([selectTodos], (todos) =>
-  todos.filter((todo) => !todo.isComplete)
+export const selectTodoIds = createSelector(
+  (state) => state.todos,
+  (todos) => todos.map((todo) => todo.id)
 );
 
-export const { addTodo, removeTodo, toggleTodo, clearCompleted } = todoSlice.actions;
+export const selectFilteredTodos = createSelector(
+  (state) => state.todos,
+  (state) => state.filters.status,
+  (todos, status) => {
+    if (status === StatusFilters.All) {
+      return todos;
+    }
+
+    const completedStatus = status === StatusFilters.Completed;
+    return todos.filter((todo) => todo.isComplete === completedStatus);
+  }
+);
+
+export const selectFilteredTodoIds = createSelector(
+  selectFilteredTodos,
+  (filteredTodos) => filteredTodos.map((todo) => todo.id)
+);
+
+export const { addTodo, removeTodo, toggleTodo, clearCompleted } =
+  todoSlice.actions;
+
 export default todoSlice.reducer;
 
 //https://www.digitalocean.com/community/tutorials/redux-reselect

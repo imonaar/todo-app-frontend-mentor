@@ -1,10 +1,15 @@
-import Todos from "../features/todos/Todos";
+import TodoList from "../features/todos/TodoList";
+import AddTodo from "../features/todos/AddTodo";
+import TodosFilter from "../features/filters/todoFilter";
+import Header from "../components/header";
 
 function App() {
   return (
     <div>
-      <h1> Hello World</h1>
-      <Todos />
+      <Header />
+      <AddTodo />
+      <TodoList />
+      <TodosFilter />
     </div>
   );
 }

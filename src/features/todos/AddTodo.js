@@ -1,9 +1,11 @@
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { addTodo } from "../../features/todos/TodosSlice";
+import {addTodo} from './TodosSlice'
 
-export default function AddTodo({ dispatch }) {
+export default function AddTodo() {
   const [text, setText] = useState("");
+  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     setText(e.target.value);
