@@ -1,11 +1,16 @@
 import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { addTodo } from "./TodosSlice";
 
 export default function AddTodo() {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
+  const inputRef = useRef();
+
+  useEffect(()=>{
+    inputRef.current.focus()
+  }, [])
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -31,6 +36,7 @@ export default function AddTodo() {
           placeholder="Add a Todo"
           value={text}
           autoFocus={true}
+          ref={inputRef}
         />
       </form>
     </div>

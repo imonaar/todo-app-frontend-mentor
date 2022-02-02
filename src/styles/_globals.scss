@@ -14,6 +14,7 @@
   --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   --border-color: #e3e4f1;
   --footer-color: #9495a5;
+  --input-color: #393a4b;
 }
 
 //retaining this to avoid flash of light on initial load
@@ -27,6 +28,7 @@
     --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
     --border-color: #393a4b;
     --footer-color: #5b5e7e;
+    --input-color: #c8cbe7;
   }
 }
 
@@ -62,6 +64,8 @@ body {
     --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
     --border-color: #393a4b;
     --footer-color: #5b5e7e;
+    
+    --input-color: #c8cbe7;
   }
 
   &.light {
@@ -72,6 +76,7 @@ body {
     --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
     --border-color: #e3e4f1;
     --footer-color: #9495a5;
+    --input-color: #393a4b;
   }
 }
 
