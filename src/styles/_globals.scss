@@ -5,8 +5,29 @@
 }
 
 :root {
-  --border-color: #E3E4F1;
-  --gradient: linear-gradient( hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --gradient: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  --color: black;
+  --bg: url("../../public/images/bg-desktop-light.jpg");
+  --bg-color: #fafafa;
+  --bg-list: white;
+  --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  --border-color: #e3e4f1;
+  --footer-color: #9495a5;
+}
+
+//retaining this to avoid flash of light on initial load
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: #c8cbe7;
+    --bg: url("../../public/images/bg-desktop-dark.jpg");
+    --bg-color: black;
+    --bg-list: #25273d;
+    --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+    --border-color: #393a4b;
+    --footer-color: #5b5e7e;
+  }
 }
 
 html {
@@ -26,6 +47,32 @@ body {
 
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.125rem;
+  background-color: var(--bg-color);
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+
+  padding-top: 4.375rem;
+  color: var(--color);
+
+  &.dark {
+    --color: #c8cbe7;
+    --bg: url("../../public/images/bg-desktop-dark.jpg");
+    --bg-color: black;
+    --bg-list: #25273d;
+    --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+    --border-color: #393a4b;
+    --footer-color: #5b5e7e;
+  }
+
+  &.light {
+    --color: black;
+    --bg: url("../../public/images/bg-desktop-light.jpg");
+    --bg-color: #fafafa;
+    --bg-list: white;
+    --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    --border-color: #e3e4f1;
+    --footer-color: #9495a5;
+  }
 }
 
 #root {
@@ -34,23 +81,27 @@ body {
   justify-content: center;
 }
 
-button{
+button {
   margin: 0;
-  padding:0;
+  padding: 0;
   background: transparent;
   border: 0;
   cursor: pointer;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-family: inherit;
+
+  color: var(--footer-color);
 }
 
-ul, li{
+ul,
+li {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
 
-p{
+p,
+h1 {
   margin: 0;
 }
 
