@@ -4,6 +4,10 @@
 .todo-container {
   display: grid;
   gap: 1.5rem;
+
+  @include mobile {
+    gap: 1rem;
+  }
 }
 
 .todo-input {
@@ -22,6 +26,12 @@
     background-color: var(--bg-list);
 
     color: var(--input-color);
+
+    @include mobile {
+      font-size: 1rem;
+      padding-block: 1.125rem;
+      padding-inline: 1.25rem;
+    }
   }
 }
 
@@ -41,6 +51,12 @@
   border-bottom: 1px solid var(--border-color);
   cursor: pointer;
 
+  @include mobile {
+    padding-block: 1rem;
+    padding-inline: 1.25rem;
+    gap: 0.75rem;
+  }
+
   .toggle {
     margin: 0;
     padding: 0;
@@ -52,6 +68,11 @@
     border: 1px solid var(--border-color);
 
     position: relative;
+
+    @include mobile {
+      block-size: 1.25rem;
+      inline-size: 1.25rem;
+    }
 
     &::before {
       content: "";
@@ -82,17 +103,20 @@
         background: url("../../public/images/icon-check.svg");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 0.75rem;
+        background-size: 0.7rem;
       }
     }
   }
 
   p {
     margin-right: auto;
-    line-height: 18px;
     letter-spacing: -0.25px;
     font-weight: 400;
     margin-bottom: -0.25rem;
+
+    @include mobile {
+      letter-spacing: -0.17px;
+    }
   }
 
   .destroy {
@@ -106,6 +130,12 @@
     cursor: pointer;
 
     visibility: hidden;
+
+    @include mobile {
+      visibility: visible;
+      block-size: 16px;
+      inline-size: 16px;
+    }
   }
 
   &:hover {

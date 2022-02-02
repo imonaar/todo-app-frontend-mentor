@@ -31,3 +31,9 @@ export default function Header() {
     </nav>
   );
 }
+
+//references
+//https://medium.com/hypersphere-codes/detecting-system-theme-in-javascript-css-react-f6b961916d48
+//https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/
+//https://stackoverflow.com/questions/56926963/react-add-body-class-only-to-certain-components-in-useeffect-hook
+//https://ryanmulligan.dev/blog/themes-and-schemes/
