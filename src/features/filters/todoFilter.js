@@ -54,7 +54,7 @@ export default function TodosFilter({ setFilter }) {
       <StatusFilter value={status} onChange={onStatusChange} />
 
       <button onClick={() => dispatch(clearCompleted())}>
-        clear completed
+        Clear Completed
       </button>
     </footer>
   );

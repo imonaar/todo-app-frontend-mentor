@@ -23,12 +23,16 @@ export default function TodoListItem({ id }) {
         onChange={handleCompleteChanged}
         checked={completed}
       />
-      <p
-        className="todo-text"
-        style={{ textDecoration: completed ? "line-through" : "" }}
-      >
-        {text}
-      </p>
+      {completed ? (
+        <p
+          className="todo-text"
+          style={{ textDecoration: "line-through", color: "#4D5067" }}
+        >
+          {text}
+        </p>
+      ) : (
+        <p className="todo-text">{text}</p>
+      )}
       <button className="destroy" onClick={() => dispatch(removeTodo(id))}>
         <Cancel />
       </button>

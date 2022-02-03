@@ -4,9 +4,18 @@
   padding-inline: 1.5rem;
   padding-block: 1.5rem;
   color: var(--footer-color);
+  position: relative;
+
+  .selected {
+    color: #3a7cfd;
+  }
 
   p {
     font-size: 0.875rem;
+  }
+
+  @include mobile {
+    padding-block: 1rem 1.25rem;
   }
 }
 
@@ -14,10 +23,28 @@
   ul {
     display: flex;
     gap: 20px;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   button {
     font-weight: 700;
-    
+  }
+
+  @include mobile {
+    position: absolute;
+    left: 0;
+    bottom: -4rem;
+    inline-size: 100%;
+    padding-inline: 5rem;
+    padding-block: 1rem;
+
+    background-color: var(--bg-list);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
   }
 }
