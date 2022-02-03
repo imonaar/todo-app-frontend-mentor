@@ -11,6 +11,16 @@
 }
 
 .todo-input {
+  .visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
   input {
     inline-size: 100%;
     padding-block: 1.25rem;
@@ -26,6 +36,7 @@
     background-color: var(--bg-list);
 
     color: var(--input-color);
+    caret-color: var(--input-color);
 
     @include mobile {
       font-size: 1rem;

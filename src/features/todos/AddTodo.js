@@ -18,11 +18,16 @@ export default function AddTodo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(text === ''){
+      return
+    }
+
     const newTodo = {
       id: uuidv4(),
       text,
       isComplete: false,
     };
+    
     dispatch(addTodo(newTodo));
     setText("");
   };
@@ -30,7 +35,11 @@ export default function AddTodo() {
   return (
     <div className="todo-input">
       <form onSubmit={handleSubmit}>
+        <label for="todo" class="visuallyhidden">
+          Write a new Todo Item
+        </label>
         <input
+          name = "todo"
           type="text"
           onChange={handleChange}
           placeholder="Add a Todo"
@@ -42,3 +51,5 @@ export default function AddTodo() {
     </div>
   );
 }
+
+//https://www.w3.org/WAI/tutorials/forms/labels/
