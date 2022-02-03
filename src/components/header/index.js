@@ -25,7 +25,7 @@ export default function Header() {
       <section>
         <h1>Todo</h1>
       </section>
-      <button onClick={changeTheme}>
+      <button onClick={changeTheme} aria-label = "change Theme">
         {theme === "light" ? <Moon /> : <Sun />}
       </button>
     </nav>
